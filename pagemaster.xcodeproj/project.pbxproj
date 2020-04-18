@@ -17,6 +17,9 @@
 		59E1D4342449D0B5003FDC38 /* pagemasterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1D4332449D0B5003FDC38 /* pagemasterUITests.swift */; };
 		59E1D4422449D2AF003FDC38 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1D4412449D2AF003FDC38 /* SignUpViewController.swift */; };
 		59E1D4442449D3EE003FDC38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1D4432449D3EE003FDC38 /* HomeViewController.swift */; };
+		59E1D4482449E098003FDC38 /* AddSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1D4472449E098003FDC38 /* AddSessionViewController.swift */; };
+		59E1D44A2449F921003FDC38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59E1D4492449F921003FDC38 /* GoogleService-Info.plist */; };
+		A252E0280DFF7FE4E4DD91DF /* libPods-pagemaster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AC517A2298B1AA2E89CA5 /* libPods-pagemaster.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3509729AD7F9CDB498F9108F /* Pods-pagemaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pagemaster.release.xcconfig"; path = "Target Support Files/Pods-pagemaster/Pods-pagemaster.release.xcconfig"; sourceTree = "<group>"; };
+		372AC517A2298B1AA2E89CA5 /* libPods-pagemaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pagemaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DD3E4AC35DBBBB340AC689B /* Pods-pagemaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pagemaster.debug.xcconfig"; path = "Target Support Files/Pods-pagemaster/Pods-pagemaster.debug.xcconfig"; sourceTree = "<group>"; };
 		59E1D40E2449D0B4003FDC38 /* pagemaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pagemaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E1D4112449D0B4003FDC38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59E1D4132449D0B4003FDC38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +59,8 @@
 		59E1D4352449D0B5003FDC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59E1D4412449D2AF003FDC38 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		59E1D4432449D3EE003FDC38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		59E1D4472449E098003FDC38 /* AddSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSessionViewController.swift; sourceTree = "<group>"; };
+		59E1D4492449F921003FDC38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A252E0280DFF7FE4E4DD91DF /* libPods-pagemaster.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +96,8 @@
 				59E1D4272449D0B5003FDC38 /* pagemasterTests */,
 				59E1D4322449D0B5003FDC38 /* pagemasterUITests */,
 				59E1D40F2449D0B4003FDC38 /* Products */,
+				E86839846E77C72F570B462B /* Pods */,
+				AC48BEACDB858690AC1CE46B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,9 +119,11 @@
 				59E1D4152449D0B4003FDC38 /* LogInViewController.swift */,
 				59E1D4412449D2AF003FDC38 /* SignUpViewController.swift */,
 				59E1D4432449D3EE003FDC38 /* HomeViewController.swift */,
+				59E1D4472449E098003FDC38 /* AddSessionViewController.swift */,
 				59E1D4172449D0B4003FDC38 /* Main.storyboard */,
 				59E1D41A2449D0B5003FDC38 /* Assets.xcassets */,
 				59E1D41C2449D0B5003FDC38 /* LaunchScreen.storyboard */,
+				59E1D4492449F921003FDC38 /* GoogleService-Info.plist */,
 				59E1D41F2449D0B5003FDC38 /* Info.plist */,
 			);
 			path = pagemaster;
@@ -134,6 +147,23 @@
 			path = pagemasterUITests;
 			sourceTree = "<group>";
 		};
+		AC48BEACDB858690AC1CE46B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				372AC517A2298B1AA2E89CA5 /* libPods-pagemaster.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E86839846E77C72F570B462B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DD3E4AC35DBBBB340AC689B /* Pods-pagemaster.debug.xcconfig */,
+				3509729AD7F9CDB498F9108F /* Pods-pagemaster.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +171,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59E1D4382449D0B5003FDC38 /* Build configuration list for PBXNativeTarget "pagemaster" */;
 			buildPhases = (
+				C001251B1F7E7D33F0211282 /* [CP] Check Pods Manifest.lock */,
 				59E1D40A2449D0B4003FDC38 /* Sources */,
 				59E1D40B2449D0B4003FDC38 /* Frameworks */,
 				59E1D40C2449D0B4003FDC38 /* Resources */,
@@ -239,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59E1D41E2449D0B5003FDC38 /* LaunchScreen.storyboard in Resources */,
+				59E1D44A2449F921003FDC38 /* GoogleService-Info.plist in Resources */,
 				59E1D41B2449D0B5003FDC38 /* Assets.xcassets in Resources */,
 				59E1D4192449D0B4003FDC38 /* Main.storyboard in Resources */,
 			);
@@ -260,12 +292,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C001251B1F7E7D33F0211282 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pagemaster-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		59E1D40A2449D0B4003FDC38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				59E1D4442449D3EE003FDC38 /* HomeViewController.swift in Sources */,
+				59E1D4482449E098003FDC38 /* AddSessionViewController.swift in Sources */,
 				59E1D4162449D0B4003FDC38 /* LogInViewController.swift in Sources */,
 				59E1D4122449D0B4003FDC38 /* AppDelegate.swift in Sources */,
 				59E1D4422449D2AF003FDC38 /* SignUpViewController.swift in Sources */,
@@ -440,15 +498,18 @@
 		};
 		59E1D4392449D0B5003FDC38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DD3E4AC35DBBBB340AC689B /* Pods-pagemaster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D95BFFAXB9;
 				INFOPLIST_FILE = pagemaster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jackantico.pagemaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -458,15 +519,18 @@
 		};
 		59E1D43A2449D0B5003FDC38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3509729AD7F9CDB498F9108F /* Pods-pagemaster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D95BFFAXB9;
 				INFOPLIST_FILE = pagemaster/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jackantico.pagemaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

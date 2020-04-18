@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>397508597216-da29lqao5qhqgffkhjcaq3ur997b23nq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.397508597216-da29lqao5qhqgffkhjcaq3ur997b23nq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCnMjFchBjOs1RYbavO2GK40eqTiVwVc3E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>397508597216</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>jackantico.pagemaster</string>
+	<key>PROJECT_ID</key>
+	<string>page-master-a79dc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>page-master-a79dc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:397508597216:ios:dce76eb6c9240653580785</string>
+	<key>DATABASE_URL</key>
+	<string>https://page-master-a79dc.firebaseio.com</string>
+</dict>
+</plist>

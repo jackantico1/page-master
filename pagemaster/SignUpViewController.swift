@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -16,10 +17,21 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.setupToHideKeyboardOnTapOnView()
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
+        let email = emailTextField?.text ?? "Invalid Username"
+        let password = passwordTextField?.text ?? "Invalid Password"
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let user = authResult?.user, error == nil {
+                self.writeData(path: "users/\(user.uid)", value: ["email": email])
+                self.performSegue(withIdentifier: "signUpToHome", sender: nil)
+            } else {
+                self.showErrorMessage(messageTitle: "Error:", messageText: "\(error!.localizedDescription)")
+            }
+        }
     }
     
 }

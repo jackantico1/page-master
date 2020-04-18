@@ -7,12 +7,29 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setTotalPagesRead()
+    }
+    
+    func setTotalPagesRead() {
+        let uid = Auth.auth().currentUser?.uid
+        getDataSnapshot(path: "users/\(uid!)") { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let sessions = value?["sessions"] as? NSDictionary
+            for session in sessions! {
+                let sessionData = session.value as? NSDictionary
+                print("sessionsData")
+                print(sessionData)
+                let pagesReadStr = sessionData?["pagesRead"] as? String ?? "0"
+                print(pagesReadStr)
+                
+            }
+        }
     }
     
 }
