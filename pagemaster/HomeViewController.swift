@@ -11,22 +11,29 @@ import Firebase
 
 class HomeViewController: UIViewController {
     
+    
+    @IBOutlet weak var totalPagesReadLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTotalPagesRead()
     }
     
-    func setTotalPagesRead() {
+    func setWeeklyData() {
         let uid = Auth.auth().currentUser?.uid
         getDataSnapshot(path: "users/\(uid!)") { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let sessions = value?["sessions"] as? NSDictionary
-            for session in sessions! {
-                let sessionData = session.value as? NSDictionary
-                print("sessionsData")
-                print(sessionData)
-                let pagesReadStr = sessionData?["pagesRead"] as? String ?? "0"
-                print(pagesReadStr)
+            if (sessions != nil) {
+                var totalPagesRead = 0
+                var totalNumOfSessions = sessions!.count
+                var i = 0
+                for n in 0...(sessions!.count - 1) {
+                    i = (sessions!.count - 1) - n
+                    let sessionData = sessions!["session\(n)"] as? NSDictionary
+                    let pagesRead = sessionData?["pagesRead"] as? Int ?? 0
+                    totalPagesRead += pagesRead
+                }
+                let averagePagesReadPerDay = totalPagesRead / 7
                 
             }
         }

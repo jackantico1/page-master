@@ -97,6 +97,70 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="B4D-fu-VCr">
+            <objects>
+                <viewController id="gGp-Zl-a29" customClass="SettingsViewController" customModule="pagemaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xXB-zN-72R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6j-g4-jyL">
+                                <rect key="frame" x="20" y="0.0" width="374" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto-fill Last Session Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8U-vQ-vtE">
+                                <rect key="frame" x="20" y="72" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tba-Bq-wrW">
+                                <rect key="frame" x="20" y="101" width="374" height="32"/>
+                                <segments>
+                                    <segment title="No"/>
+                                    <segment title="Yes"/>
+                                </segments>
+                                <connections>
+                                    <action selector="autoFillSettingChanged:" destination="gGp-Zl-a29" eventType="valueChanged" id="Qdm-xe-qL5"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqu-tL-rM1">
+                                <rect key="frame" x="20" y="772" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="fRu-9k-7t5" kind="presentation" id="0sU-dW-XVp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oqu-tL-rM1" firstAttribute="leading" secondItem="1CI-cY-RYe" secondAttribute="leading" constant="20" id="1Dr-9a-NPq"/>
+                            <constraint firstItem="1CI-cY-RYe" firstAttribute="trailing" secondItem="a6j-g4-jyL" secondAttribute="trailing" constant="20" id="3Wr-fP-lzv"/>
+                            <constraint firstItem="a6j-g4-jyL" firstAttribute="top" secondItem="1CI-cY-RYe" secondAttribute="top" id="5TG-Rv-Yuh"/>
+                            <constraint firstItem="Tba-Bq-wrW" firstAttribute="leading" secondItem="1CI-cY-RYe" secondAttribute="leading" constant="20" id="CFi-JW-cft"/>
+                            <constraint firstItem="1CI-cY-RYe" firstAttribute="trailing" secondItem="oqu-tL-rM1" secondAttribute="trailing" constant="20" id="E36-Vf-Brp"/>
+                            <constraint firstItem="h8U-vQ-vtE" firstAttribute="leading" secondItem="1CI-cY-RYe" secondAttribute="leading" constant="20" id="GL6-iU-8MH"/>
+                            <constraint firstItem="1CI-cY-RYe" firstAttribute="trailing" secondItem="Tba-Bq-wrW" secondAttribute="trailing" constant="20" id="Hr1-wb-RHh"/>
+                            <constraint firstItem="1CI-cY-RYe" firstAttribute="trailing" secondItem="h8U-vQ-vtE" secondAttribute="trailing" constant="20" id="Pld-CF-du4"/>
+                            <constraint firstItem="a6j-g4-jyL" firstAttribute="leading" secondItem="1CI-cY-RYe" secondAttribute="leading" constant="20" id="XfV-1W-z9R"/>
+                            <constraint firstItem="Tba-Bq-wrW" firstAttribute="top" secondItem="h8U-vQ-vtE" secondAttribute="bottom" constant="8" id="Y6b-3Z-4nC"/>
+                            <constraint firstItem="h8U-vQ-vtE" firstAttribute="top" secondItem="a6j-g4-jyL" secondAttribute="bottom" constant="24" id="u9B-hA-a12"/>
+                            <constraint firstItem="oqu-tL-rM1" firstAttribute="bottom" secondItem="1CI-cY-RYe" secondAttribute="bottom" id="wof-0G-yP0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1CI-cY-RYe"/>
+                    </view>
+                    <connections>
+                        <outlet property="autoFillSetting" destination="Tba-Bq-wrW" id="4bM-7d-udp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JyM-t7-6XY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-859.4202898550725" y="898.66071428571422"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="jQv-e4-EZR">
             <objects>
@@ -106,31 +170,83 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEi-Rb-KKP">
-                                <rect key="frame" x="20" y="772" width="374" height="36"/>
+                                <rect key="frame" x="20" y="712" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add Reading Session"/>
                                 <connections>
                                     <segue destination="Jbl-VE-Ddv" kind="presentation" id="YSp-vb-GR2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Page Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSH-o0-rIy">
-                                <rect key="frame" x="20" y="20" width="374" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Master" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSH-o0-rIy">
+                                <rect key="frame" x="20" y="0.0" width="374" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pages Read:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1Q-cs-LrF">
+                                <rect key="frame" x="20" y="119" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ye-TA-YBy">
+                                <rect key="frame" x="20" y="772" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="gGp-Zl-a29" kind="presentation" id="mzd-WZ-enb"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nq5-M5-5Mx">
+                                <rect key="frame" x="20" y="72" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Weekly"/>
+                                    <segment title="Monthly"/>
+                                    <segment title="Yearly"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Reading Sessions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EX-hq-FGr">
+                                <rect key="frame" x="20" y="156" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages Read / Day:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCd-km-dCA">
+                                <rect key="frame" x="20" y="193" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="2Ye-TA-YBy" firstAttribute="leading" secondItem="MGv-dS-Ydz" secondAttribute="leading" constant="20" id="8lh-Si-Irh"/>
                             <constraint firstItem="dSH-o0-rIy" firstAttribute="top" secondItem="MGv-dS-Ydz" secondAttribute="top" id="Bti-zP-eVb"/>
-                            <constraint firstItem="YEi-Rb-KKP" firstAttribute="bottom" secondItem="MGv-dS-Ydz" secondAttribute="bottom" id="CzP-Rp-aTO"/>
+                            <constraint firstItem="4EX-hq-FGr" firstAttribute="leading" secondItem="MGv-dS-Ydz" secondAttribute="leading" constant="20" id="D47-v2-2Pe"/>
+                            <constraint firstItem="nq5-M5-5Mx" firstAttribute="leading" secondItem="MGv-dS-Ydz" secondAttribute="leading" constant="20" id="Hf7-6V-P0Q"/>
+                            <constraint firstItem="H1Q-cs-LrF" firstAttribute="top" secondItem="nq5-M5-5Mx" secondAttribute="bottom" constant="16" id="KfQ-7L-3TV"/>
+                            <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="nq5-M5-5Mx" secondAttribute="trailing" constant="20" id="MZI-6V-oI2"/>
                             <constraint firstItem="YEi-Rb-KKP" firstAttribute="leading" secondItem="MGv-dS-Ydz" secondAttribute="leading" constant="20" id="PGR-jI-hzl"/>
                             <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="dSH-o0-rIy" secondAttribute="trailing" constant="20" id="Pdc-oy-6Nk"/>
+                            <constraint firstItem="gCd-km-dCA" firstAttribute="leading" secondItem="MGv-dS-Ydz" secondAttribute="leading" constant="20" id="R02-dY-RiB"/>
+                            <constraint firstItem="gCd-km-dCA" firstAttribute="top" secondItem="4EX-hq-FGr" secondAttribute="bottom" constant="16" id="Tco-U2-Fzo"/>
+                            <constraint firstItem="H1Q-cs-LrF" firstAttribute="leading" secondItem="MGv-dS-Ydz" secondAttribute="leading" constant="20" id="aLp-Gq-ELh"/>
+                            <constraint firstItem="nq5-M5-5Mx" firstAttribute="top" secondItem="dSH-o0-rIy" secondAttribute="bottom" constant="24" id="aT8-J7-K78"/>
                             <constraint firstItem="dSH-o0-rIy" firstAttribute="leading" secondItem="MGv-dS-Ydz" secondAttribute="leading" constant="20" id="bNY-aP-snM"/>
+                            <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="gCd-km-dCA" secondAttribute="trailing" constant="20" id="hxr-47-Cq9"/>
+                            <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="2Ye-TA-YBy" secondAttribute="trailing" constant="20" id="kcZ-ex-cuR"/>
+                            <constraint firstItem="2Ye-TA-YBy" firstAttribute="top" secondItem="YEi-Rb-KKP" secondAttribute="bottom" constant="24" id="lAX-8d-YRW"/>
+                            <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="H1Q-cs-LrF" secondAttribute="trailing" constant="20" id="q7a-aY-zJt"/>
+                            <constraint firstItem="4EX-hq-FGr" firstAttribute="top" secondItem="H1Q-cs-LrF" secondAttribute="bottom" constant="16" id="tsS-jQ-6HD"/>
+                            <constraint firstItem="2Ye-TA-YBy" firstAttribute="bottom" secondItem="MGv-dS-Ydz" secondAttribute="bottom" id="xj1-ZC-YKq"/>
+                            <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="4EX-hq-FGr" secondAttribute="trailing" constant="20" id="yCF-zL-9Ts"/>
                             <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="YEi-Rb-KKP" secondAttribute="trailing" constant="20" id="ydA-gc-ijZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MGv-dS-Ydz"/>
                     </view>
+                    <connections>
+                        <outlet property="totalPagesReadLabel" destination="H1Q-cs-LrF" id="etA-ML-4HM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhD-FX-OaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -324,6 +440,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="R04-aq-tgJ"/>
+        <segue reference="mzd-WZ-enb"/>
+        <segue reference="0sU-dW-XVp"/>
     </inferredMetricsTieBreakers>
 </document>

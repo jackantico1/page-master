@@ -39,7 +39,7 @@ class LogInViewController: UIViewController {
 }
 
 extension UIViewController {
-    func writeData(path: String, value: [String: Any]) {
+    func setData(path: String, value: [String: Any]) {
         var ref: DatabaseReference!
         ref = Database.database().reference()
         ref.child(path).setValue(value)

@@ -19,6 +19,11 @@ class AddSessionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupToHideKeyboardOnTapOnView()
+        wantsAutoFillSetting { (wantsSetting) in
+            if (wantsSetting) {
+                self.addLastSessionData()
+            }
+        }
     }
     
     @IBAction func addReadingSessionPressed(_ sender: UIButton) {
@@ -30,12 +35,40 @@ class AddSessionViewController: UIViewController {
             return
         }
         let date = returnDayMonthYear()
+        let weekOfYear = NSDateComponents().weekOfYear
         let startingPageNum = Int(startingPageNumStr) ?? 0
         let endingPageNum = Int(endingPageNumStr) ?? 0
         let pagesRead = endingPageNum - startingPageNum
         let uid = Auth.auth().currentUser?.uid
         getNumOfSessions { (numOfSessions) in
-            self.writeData(path: "users/\(uid!)/sessions/session\(numOfSessions)", value: ["title": bookTitle, "startingPageNum": startingPageNum, "endingPageNum": endingPageNum, "pagesRead": pagesRead, "month": date[0], "year": date[1],"day": date[2]])
+            self.setData(path: "users/\(uid!)/sessions/session\(numOfSessions)", value: ["title": bookTitle, "startingPageNum": startingPageNum, "endingPageNum": endingPageNum, "pagesRead": pagesRead, "month": date[0], "year": date[1], "day": date[2], "weekOfYear": weekOfYear])
+        }
+    }
+    
+    func addLastSessionData() {
+        let uid = Auth.auth().currentUser?.uid
+        getDataSnapshot(path: "users/\(uid!)/sessions") { (snapshot) in
+            let sessionNum = Int(snapshot.childrenCount) - 1
+            let value = snapshot.value as? NSDictionary
+            let sessionData = value?["session\(sessionNum)"] as? NSDictionary
+            let lastBookTitleRead = sessionData?["title"] as? String ?? ""
+            let lastPageNum = sessionData?["endingPageNum"] as? Int ?? 0
+            self.bookTitleField.text = lastBookTitleRead
+            self.startingPageNumField.text = "\(lastPageNum)"
+        }
+    }
+    
+    func wantsAutoFillSetting(completion: @escaping (Bool) -> ()) {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let uid = Auth.auth().currentUser?.uid
+        ref.child("usersSettings/\(uid!)/autoFill").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let settingInt = value?["setting"] as? Int ?? 1
+            let settingBool = settingInt == 1
+            completion(settingBool)
+        }) { (error) in
+            self.showErrorMessage(messageTitle: "Error:", messageText: error.localizedDescription)
         }
     }
     
