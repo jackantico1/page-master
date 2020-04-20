@@ -21,7 +21,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func autoFillSettingChanged(_ sender: UISegmentedControl) {
         let uid = Auth.auth().currentUser?.uid
-        setData(path: "userSettings/\(uid!)/autFill", value: ["setting": "\(autoFillSetting.selectedSegmentIndex)"])
+        setData(path: "usersSettings/\(uid!)/autoFill", value: ["setting": (autoFillSetting.selectedSegmentIndex)])
     }
     
     func setAutoFillSetting() {

@@ -74,10 +74,10 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func returnDayMonthYear() -> [String] {
-        let day = String(String("\(Date())".dropLast(15)).dropFirst(8))
-        let month = String(String("\(Date())".dropLast(18)).dropFirst(5))
-        let year = String("\(Date())".dropLast(21))
+    func returnDayMonthYear() -> [Int] {
+        let day = Calendar.current.component(.day, from: Date.init(timeIntervalSinceNow: 0))
+        let month = Calendar.current.component(.month, from: Date.init(timeIntervalSinceNow: 0))
+        let year = Calendar.current.component(.year, from: Date.init(timeIntervalSinceNow: 0))
         return [day, month, year]
     }
     

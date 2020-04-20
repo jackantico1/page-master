@@ -35,13 +35,14 @@ class AddSessionViewController: UIViewController {
             return
         }
         let date = returnDayMonthYear()
-        let weekOfYear = NSDateComponents().weekOfYear
-        let startingPageNum = Int(startingPageNumStr) ?? 0
+        let weekOfYear = Calendar.current.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
+        let startingPageNum = Int(startingPageNumStr) ?? 1
         let endingPageNum = Int(endingPageNumStr) ?? 0
         let pagesRead = endingPageNum - startingPageNum
         let uid = Auth.auth().currentUser?.uid
         getNumOfSessions { (numOfSessions) in
-            self.setData(path: "users/\(uid!)/sessions/session\(numOfSessions)", value: ["title": bookTitle, "startingPageNum": startingPageNum, "endingPageNum": endingPageNum, "pagesRead": pagesRead, "month": date[0], "year": date[1], "day": date[2], "weekOfYear": weekOfYear])
+            self.setData(path: "users/\(uid!)/sessions/session\(numOfSessions)", value: ["title": bookTitle, "startingPageNum": startingPageNum, "endingPageNum": endingPageNum, "pagesRead": pagesRead, "day": date[0], "month": date[1], "year": date[2], "weekOfYear": weekOfYear])
+            self.performSegue(withIdentifier: "addSessiontoHome", sender: self)
         }
     }
     

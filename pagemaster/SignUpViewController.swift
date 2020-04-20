@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let user = authResult?.user, error == nil {
                 self.setData(path: "users/\(user.uid)", value: ["email": email])
-                self.setData(path: "usersSettings/\(user.uid)/autoFill", value: ["setting": "1"])
+                self.setData(path: "usersSettings/\(user.uid)/autoFill", value: ["setting": 1])
                 self.performSegue(withIdentifier: "signUpToHome", sender: nil)
             } else {
                 self.showErrorMessage(messageTitle: "Error:", messageText: "\(error!.localizedDescription)")
