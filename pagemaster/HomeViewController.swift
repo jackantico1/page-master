@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = UIColor.init(red: 116.0/256.0, green: 252.0/256.0, blue: 229.0/256.0, alpha: 1.0)
         tableView.delegate = self
         tableView.dataSource = self
         loadData()
@@ -49,7 +50,7 @@ class HomeViewController: UIViewController {
             if (sessions != nil) {
                 var totalPagesRead = 0
                 var newTitlesRead = [String]()
-                let totalNumOfSessions = sessions!.count
+                var totalNumOfSessions = 0
                 let currentWeekOfYear = Calendar.current.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
                 var i = 0
                 for n in 0...(sessions!.count - 1) {
@@ -63,16 +64,19 @@ class HomeViewController: UIViewController {
                             newTitlesRead.append(title)
                         }
                         totalPagesRead += pagesRead
+                        totalNumOfSessions += 1
                     } else {
                         break
                     }
                 }
-                let averagePagesReadPerSession = totalPagesRead / totalNumOfSessions
-                let averagePagesReadPerDay = totalPagesRead / Calendar.current.component(.weekday, from: Date())
+                let averagePagesReadPerSessionFloat = Double(totalPagesRead) / Double(totalNumOfSessions)
+                let averagePagesReadPerSession = round(10*averagePagesReadPerSessionFloat)/10
+                let averagePagesReadPerDayDouble = Double(totalPagesRead) / Double(Calendar.current.component(.weekday, from: Date()))
+                let averagePagesReadPerDay = round(10*averagePagesReadPerDayDouble) / 10
                 self.titlesRead = newTitlesRead
                 self.totalPagesReadLabel.text =  "Total Pages Read: \(totalPagesRead)"
                 self.totalReadingSessionsLabel.text = "Total Reading Sessions: \(totalNumOfSessions)"
-                self.pagesReadPerSession.text = "Pages Read / Session: \(averagePagesReadPerDay)"
+                self.pagesReadPerSession.text = "Pages Read / Session: \(averagePagesReadPerSession)"
                 self.pagesReadPerDayLabel.text = "Pages Read / Day: \(averagePagesReadPerDay)"
                 print("titlesRead: \(self.titlesRead)")
                 self.tableView.reloadData()
@@ -87,7 +91,7 @@ class HomeViewController: UIViewController {
             let sessions = value?["sessions"] as? NSDictionary
             if (sessions != nil) {
                 var totalPagesRead = 0
-                let totalNumOfSessions = sessions!.count
+                var totalNumOfSessions = 0
                 let currentMonth = Calendar.current.component(.month, from: Date.init(timeIntervalSinceNow: 0))
                 var i = 0
                 for n in 0...(sessions!.count - 1) {
@@ -97,13 +101,18 @@ class HomeViewController: UIViewController {
                     if (monthOfEntry == currentMonth) {
                         let pagesRead = sessionData?["pagesRead"] as? Int ?? 0
                         totalPagesRead += pagesRead
+                        totalNumOfSessions += 1
                     } else {
                         break
                     }
                 }
-                let averagePagesReadPerDay = totalPagesRead / 29
+                let averagePagesReadPerSessionFloat = Double(totalPagesRead) / Double(totalNumOfSessions)
+                let averagePagesReadPerSession = round(10*averagePagesReadPerSessionFloat)/10
+                let averagePagesReadPerDayDouble = Double(totalPagesRead) / 29.0
+                let averagePagesReadPerDay = round(10*averagePagesReadPerDayDouble) / 10
                 self.totalPagesReadLabel.text =  "Total Pages Read: \(totalPagesRead)"
                 self.totalReadingSessionsLabel.text = "Total Reading Sessions: \(totalNumOfSessions)"
+                self.pagesReadPerSession.text = "Pages Read / Session: \(averagePagesReadPerSession)"
                 self.pagesReadPerDayLabel.text = "Pages Read / Day: \(averagePagesReadPerDay)"
             }
         }
@@ -116,7 +125,7 @@ class HomeViewController: UIViewController {
             let sessions = value?["sessions"] as? NSDictionary
             if (sessions != nil) {
                 var totalPagesRead = 0
-                let totalNumOfSessions = sessions!.count
+                var totalNumOfSessions = 0
                 let currentYear = Calendar.current.component(.year, from: Date.init(timeIntervalSinceNow: 0))
                 var i = 0
                 for n in 0...(sessions!.count - 1) {
@@ -126,13 +135,18 @@ class HomeViewController: UIViewController {
                     if (yearOfEntry == currentYear) {
                         let pagesRead = sessionData?["pagesRead"] as? Int ?? 0
                         totalPagesRead += pagesRead
+                        totalNumOfSessions += 1
                     } else {
                         break
                     }
                 }
-                let averagePagesReadPerDay = totalPagesRead / 365
+                let averagePagesReadPerSessionFloat = Double(totalPagesRead) / Double(totalNumOfSessions)
+                let averagePagesReadPerSession = round(10*averagePagesReadPerSessionFloat)/10
+                let averagePagesReadPerDayDouble = Double(totalPagesRead) / 365.0
+                let averagePagesReadPerDay = round(10*averagePagesReadPerDayDouble) / 10
                 self.totalPagesReadLabel.text =  "Total Pages Read: \(totalPagesRead)"
                 self.totalReadingSessionsLabel.text = "Total Reading Sessions: \(totalNumOfSessions)"
+                self.pagesReadPerSession.text = "Pages Read / Session: \(averagePagesReadPerSession)"
                 self.pagesReadPerDayLabel.text = "Pages Read / Day: \(averagePagesReadPerDay)"
             }
         }
@@ -148,7 +162,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = UIColor.init(red: 116.0/256.0, green: 252.0/256.0, blue: 229.0/256.0, alpha: 1.0)
         cell.textLabel?.text = titlesRead[indexPath.row]
+        cell.textLabel?.font = UIFont(name:"Palatino", size:22)
         return cell
     }
 }
