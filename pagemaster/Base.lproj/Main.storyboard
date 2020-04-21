@@ -116,13 +116,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto-fill Last Session Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8U-vQ-vtE">
-                                <rect key="frame" x="20" y="68.5" width="374" height="22.5"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <rect key="frame" x="20" y="68.5" width="374" height="28"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tba-Bq-wrW">
-                                <rect key="frame" x="20" y="99" width="374" height="32"/>
+                                <rect key="frame" x="20" y="104.5" width="374" height="32"/>
                                 <segments>
                                     <segment title="No"/>
                                     <segment title="Yes"/>
@@ -141,26 +141,53 @@
                                     <segue destination="fRu-9k-7t5" kind="presentation" id="0sU-dW-XVp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ude-bG-4rr">
+                                <rect key="frame" x="20" y="175.5" width="374" height="40"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutPressed:" destination="gGp-Zl-a29" eventType="touchUpInside" id="dl0-jJ-Ozk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hk0-K7-snc">
+                                <rect key="frame" x="20" y="239.5" width="374" height="35"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <state key="normal" title="Delete Account">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAccountPressed:" destination="gGp-Zl-a29" eventType="touchUpInside" id="YIq-GT-g2j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.45550411940000002" green="0.98702150580000003" blue="0.8973490596" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oqu-tL-rM1" firstAttribute="leading" secondItem="1CI-cY-RYe" secondAttribute="leading" constant="20" id="1Dr-9a-NPq"/>
                             <constraint firstItem="1CI-cY-RYe" firstAttribute="trailing" secondItem="a6j-g4-jyL" secondAttribute="trailing" constant="20" id="3Wr-fP-lzv"/>
                             <constraint firstItem="a6j-g4-jyL" firstAttribute="top" secondItem="1CI-cY-RYe" secondAttribute="top" id="5TG-Rv-Yuh"/>
+                            <constraint firstItem="1CI-cY-RYe" firstAttribute="trailing" secondItem="ude-bG-4rr" secondAttribute="trailing" constant="20" id="Bhz-SC-E6W"/>
                             <constraint firstItem="Tba-Bq-wrW" firstAttribute="leading" secondItem="1CI-cY-RYe" secondAttribute="leading" constant="20" id="CFi-JW-cft"/>
                             <constraint firstItem="1CI-cY-RYe" firstAttribute="trailing" secondItem="oqu-tL-rM1" secondAttribute="trailing" constant="20" id="E36-Vf-Brp"/>
                             <constraint firstItem="h8U-vQ-vtE" firstAttribute="leading" secondItem="1CI-cY-RYe" secondAttribute="leading" constant="20" id="GL6-iU-8MH"/>
                             <constraint firstItem="1CI-cY-RYe" firstAttribute="trailing" secondItem="Tba-Bq-wrW" secondAttribute="trailing" constant="20" id="Hr1-wb-RHh"/>
                             <constraint firstItem="1CI-cY-RYe" firstAttribute="trailing" secondItem="h8U-vQ-vtE" secondAttribute="trailing" constant="20" id="Pld-CF-du4"/>
+                            <constraint firstItem="ude-bG-4rr" firstAttribute="leading" secondItem="1CI-cY-RYe" secondAttribute="leading" constant="20" id="UKr-dr-dbc"/>
                             <constraint firstItem="a6j-g4-jyL" firstAttribute="leading" secondItem="1CI-cY-RYe" secondAttribute="leading" constant="20" id="XfV-1W-z9R"/>
                             <constraint firstItem="Tba-Bq-wrW" firstAttribute="top" secondItem="h8U-vQ-vtE" secondAttribute="bottom" constant="8" id="Y6b-3Z-4nC"/>
+                            <constraint firstItem="ude-bG-4rr" firstAttribute="top" secondItem="Tba-Bq-wrW" secondAttribute="bottom" constant="40" id="kuG-xk-M5H"/>
+                            <constraint firstItem="hk0-K7-snc" firstAttribute="leading" secondItem="1CI-cY-RYe" secondAttribute="leading" constant="20" id="lrL-pN-umm"/>
                             <constraint firstItem="h8U-vQ-vtE" firstAttribute="top" secondItem="a6j-g4-jyL" secondAttribute="bottom" constant="24" id="u9B-hA-a12"/>
+                            <constraint firstItem="hk0-K7-snc" firstAttribute="top" secondItem="ude-bG-4rr" secondAttribute="bottom" constant="24" id="v6R-sc-DNC"/>
+                            <constraint firstItem="1CI-cY-RYe" firstAttribute="trailing" secondItem="hk0-K7-snc" secondAttribute="trailing" constant="20" id="vPP-Ts-jsK"/>
                             <constraint firstItem="oqu-tL-rM1" firstAttribute="bottom" secondItem="1CI-cY-RYe" secondAttribute="bottom" id="wof-0G-yP0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1CI-cY-RYe"/>
                     </view>
                     <connections>
                         <outlet property="autoFillSetting" destination="Tba-Bq-wrW" id="4bM-7d-udp"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="settingsToLogIn" id="T5X-jP-Q4z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyM-t7-6XY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -176,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEi-Rb-KKP">
-                                <rect key="frame" x="20" y="704" width="374" height="40"/>
+                                <rect key="frame" x="20" y="696" width="374" height="40"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
                                 <state key="normal" title="Add Reading Session">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,21 +219,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pages Read:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1Q-cs-LrF">
-                                <rect key="frame" x="20" y="115.5" width="374" height="20"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                <rect key="frame" x="20" y="115.5" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ye-TA-YBy">
-                                <rect key="frame" x="20" y="768" width="374" height="40"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="gGp-Zl-a29" kind="presentation" id="mzd-WZ-enb"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nq5-M5-5Mx">
                                 <rect key="frame" x="20" y="68.5" width="374" height="32"/>
                                 <segments>
@@ -219,31 +236,31 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Reading Sessions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EX-hq-FGr">
-                                <rect key="frame" x="20" y="151.5" width="374" height="20"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                <rect key="frame" x="20" y="154" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages Read / Day:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCd-km-dCA">
-                                <rect key="frame" x="20" y="223.5" width="374" height="20"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                <rect key="frame" x="20" y="231" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages Read / Session:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="923-sr-afL">
-                                <rect key="frame" x="20" y="187.5" width="374" height="20"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                <rect key="frame" x="20" y="192.5" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titles Read:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBS-zP-bFA">
-                                <rect key="frame" x="20" y="275.5" width="374" height="20"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                <rect key="frame" x="20" y="285.5" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fVI-Mv-Bcy">
-                                <rect key="frame" x="20" y="303.5" width="374" height="376.5"/>
+                                <rect key="frame" x="20" y="316" width="374" height="356"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="ntV-ez-5QH">
@@ -256,6 +273,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ye-TA-YBy">
+                                <rect key="frame" x="20" y="752" width="374" height="40"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gGp-Zl-a29" kind="presentation" id="mzd-WZ-enb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.45550411940000002" green="0.98702150580000003" blue="0.8973490596" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -274,6 +301,7 @@
                             <constraint firstItem="fVI-Mv-Bcy" firstAttribute="leading" secondItem="MGv-dS-Ydz" secondAttribute="leading" constant="20" id="TRU-By-aJR"/>
                             <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="923-sr-afL" secondAttribute="trailing" constant="20" id="Tm1-7g-JhG"/>
                             <constraint firstItem="WBS-zP-bFA" firstAttribute="leading" secondItem="MGv-dS-Ydz" secondAttribute="leading" constant="20" id="Unj-p0-1Yg"/>
+                            <constraint firstItem="MGv-dS-Ydz" firstAttribute="bottom" secondItem="2Ye-TA-YBy" secondAttribute="bottom" constant="16" id="WoB-dc-30t"/>
                             <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="fVI-Mv-Bcy" secondAttribute="trailing" constant="20" id="XUZ-xy-B6v"/>
                             <constraint firstItem="H1Q-cs-LrF" firstAttribute="leading" secondItem="MGv-dS-Ydz" secondAttribute="leading" constant="20" id="aLp-Gq-ELh"/>
                             <constraint firstItem="nq5-M5-5Mx" firstAttribute="top" secondItem="dSH-o0-rIy" secondAttribute="bottom" constant="24" id="aT8-J7-K78"/>
@@ -282,11 +310,10 @@
                             <constraint firstItem="gCd-km-dCA" firstAttribute="top" secondItem="923-sr-afL" secondAttribute="bottom" constant="16" id="hgB-t8-RGA"/>
                             <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="gCd-km-dCA" secondAttribute="trailing" constant="20" id="hxr-47-Cq9"/>
                             <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="2Ye-TA-YBy" secondAttribute="trailing" constant="20" id="kcZ-ex-cuR"/>
-                            <constraint firstItem="2Ye-TA-YBy" firstAttribute="top" secondItem="YEi-Rb-KKP" secondAttribute="bottom" constant="24" id="lAX-8d-YRW"/>
+                            <constraint firstItem="2Ye-TA-YBy" firstAttribute="top" secondItem="YEi-Rb-KKP" secondAttribute="bottom" constant="16" id="lAX-8d-YRW"/>
                             <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="WBS-zP-bFA" secondAttribute="trailing" constant="20" id="mFs-gh-6q2"/>
                             <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="H1Q-cs-LrF" secondAttribute="trailing" constant="20" id="q7a-aY-zJt"/>
                             <constraint firstItem="4EX-hq-FGr" firstAttribute="top" secondItem="H1Q-cs-LrF" secondAttribute="bottom" constant="16" id="tsS-jQ-6HD"/>
-                            <constraint firstItem="2Ye-TA-YBy" firstAttribute="bottom" secondItem="MGv-dS-Ydz" secondAttribute="bottom" id="xj1-ZC-YKq"/>
                             <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="4EX-hq-FGr" secondAttribute="trailing" constant="20" id="yCF-zL-9Ts"/>
                             <constraint firstItem="YEi-Rb-KKP" firstAttribute="top" secondItem="fVI-Mv-Bcy" secondAttribute="bottom" constant="24" id="yJW-wz-86l"/>
                             <constraint firstItem="MGv-dS-Ydz" firstAttribute="trailing" secondItem="YEi-Rb-KKP" secondAttribute="trailing" constant="20" id="ydA-gc-ijZ"/>
@@ -370,7 +397,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="addReadingSessionPressed:" destination="Jbl-VE-Ddv" eventType="touchUpInside" id="Bq0-GC-EtA"/>
                                     <segue destination="fRu-9k-7t5" kind="presentation" id="bh0-Ma-7h0"/>
                                 </connections>
                             </button>
@@ -514,6 +540,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hAu-Qi-78j"/>
+        <segue reference="0sU-dW-XVp"/>
+        <segue reference="T5X-jP-Q4z"/>
     </inferredMetricsTieBreakers>
 </document>

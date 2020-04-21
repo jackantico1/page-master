@@ -33,4 +33,22 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func signOutPressed(_ sender: UIButton) {
+        try! Auth.auth().signOut()
+        self.performSegue(withIdentifier: "settingsToLogIn", sender: nil)
+    }
+    
+    @IBAction func deleteAccountPressed(_ sender: UIButton) {
+        let user = Auth.auth().currentUser
+        user?.delete { error in
+            if error != nil {
+                self.showErrorMessage(messageTitle: "Error:", messageText: "For some reason your account couldn't be deleted. Please text me at +18606144966 and I will delete your account.")
+            } else {
+                //Actual data on database won't get deleted
+                self.performSegue(withIdentifier: "settingsToLogIn", sender: nil)
+            }
+        }
+    }
+    
 }
