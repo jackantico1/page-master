@@ -45,7 +45,7 @@
 		372AC517A2298B1AA2E89CA5 /* libPods-pagemaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pagemaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD3E4AC35DBBBB340AC689B /* Pods-pagemaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pagemaster.debug.xcconfig"; path = "Target Support Files/Pods-pagemaster/Pods-pagemaster.debug.xcconfig"; sourceTree = "<group>"; };
 		59DE80B6244B884100BDF07A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		59E1D40E2449D0B4003FDC38 /* pagemaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pagemaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59E1D40E2449D0B4003FDC38 /* Page Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Page Master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E1D4112449D0B4003FDC38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59E1D4132449D0B4003FDC38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		59E1D4152449D0B4003FDC38 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		59E1D40F2449D0B4003FDC38 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				59E1D40E2449D0B4003FDC38 /* pagemaster.app */,
+				59E1D40E2449D0B4003FDC38 /* Page Master.app */,
 				59E1D4242449D0B5003FDC38 /* pagemasterTests.xctest */,
 				59E1D42F2449D0B5003FDC38 /* pagemasterUITests.xctest */,
 			);
@@ -185,7 +185,7 @@
 			);
 			name = pagemaster;
 			productName = pagemaster;
-			productReference = 59E1D40E2449D0B4003FDC38 /* pagemaster.app */;
+			productReference = 59E1D40E2449D0B4003FDC38 /* Page Master.app */;
 			productType = "com.apple.product-type.application";
 		};
 		59E1D4232449D0B5003FDC38 /* pagemasterTests */ = {
@@ -506,7 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = D95BFFAXB9;
 				INFOPLIST_FILE = pagemaster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
@@ -514,9 +514,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jackantico.pagemaster;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Page Master";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -528,7 +528,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = D95BFFAXB9;
 				INFOPLIST_FILE = pagemaster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
@@ -536,9 +536,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jackantico.pagemaster;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Page Master";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
