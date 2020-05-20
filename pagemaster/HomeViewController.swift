@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var timePeriodSelected: UISegmentedControl!
     @IBOutlet weak var totalPagesReadLabel: UILabel!
     @IBOutlet weak var totalReadingSessionsLabel: UILabel!
-    @IBOutlet weak var pagesReadPerSession: UILabel!
+    @IBOutlet weak var pagesReadPerSessionLabel: UILabel!
     @IBOutlet weak var pagesReadPerDayLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,6 +30,13 @@ class HomeViewController: UIViewController {
     
     @IBAction func timePeriodChanged(_ sender: UISegmentedControl) {
         loadData()
+    }
+    
+    
+    @IBAction func seeInDepthStatsPressed(_ sender: UIButton) {
+        if (timePeriodSelected.selectedSegmentIndex == 0) {
+            performSegue(withIdentifier: "homeToWeeklyStats", sender: nil)
+        }
     }
     
     func loadData() {
@@ -71,13 +78,16 @@ class HomeViewController: UIViewController {
                     }
                 }
                 let averagePagesReadPerSessionFloat = Double(totalPagesRead) / Double(totalNumOfSessions)
-                let averagePagesReadPerSession = round(10*averagePagesReadPerSessionFloat)/10
+                var averagePagesReadPerSession = round(10*averagePagesReadPerSessionFloat)/10
+                if (totalPagesRead == 0) {
+                    averagePagesReadPerSession = 0.0
+                }
                 let averagePagesReadPerDayDouble = Double(totalPagesRead) / Double(Calendar.current.component(.weekday, from: Date()))
                 let averagePagesReadPerDay = round(10*averagePagesReadPerDayDouble) / 10
                 self.titlesRead = newTitlesRead
                 self.totalPagesReadLabel.text =  "Total Pages Read: \(totalPagesRead)"
                 self.totalReadingSessionsLabel.text = "Total Reading Sessions: \(totalNumOfSessions)"
-                self.pagesReadPerSession.text = "Pages Read / Session: \(averagePagesReadPerSession)"
+                self.pagesReadPerSessionLabel.text = "Pages Read / Session: \(averagePagesReadPerSession)"
                 self.pagesReadPerDayLabel.text = "Pages Read / Day: \(averagePagesReadPerDay)"
                 self.tableView.reloadData()
             }
@@ -118,7 +128,7 @@ class HomeViewController: UIViewController {
                 self.titlesRead = newTitlesRead
                 self.totalPagesReadLabel.text =  "Total Pages Read: \(totalPagesRead)"
                 self.totalReadingSessionsLabel.text = "Total Reading Sessions: \(totalNumOfSessions)"
-                self.pagesReadPerSession.text = "Pages Read / Session: \(averagePagesReadPerSession)"
+                self.pagesReadPerSessionLabel.text = "Pages Read / Session: \(averagePagesReadPerSession)"
                 self.pagesReadPerDayLabel.text = "Pages Read / Day: \(averagePagesReadPerDay)"
                 self.tableView.reloadData()
             }
@@ -159,7 +169,7 @@ class HomeViewController: UIViewController {
                 self.titlesRead = newTitlesRead
                 self.totalPagesReadLabel.text =  "Total Pages Read: \(totalPagesRead)"
                 self.totalReadingSessionsLabel.text = "Total Reading Sessions: \(totalNumOfSessions)"
-                self.pagesReadPerSession.text = "Pages Read / Session: \(averagePagesReadPerSession)"
+                self.pagesReadPerSessionLabel.text = "Pages Read / Session: \(averagePagesReadPerSession)"
                 self.pagesReadPerDayLabel.text = "Pages Read / Day: \(averagePagesReadPerDay)"
                 self.tableView.reloadData()
             }

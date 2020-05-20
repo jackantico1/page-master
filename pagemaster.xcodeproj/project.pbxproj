@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59D2E6EC2465F161004FFA71 /* WeeklyStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2E6EB2465F161004FFA71 /* WeeklyStatsViewController.swift */; };
+		59D2E6EE2465F1BF004FFA71 /* MonthlyStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2E6ED2465F1BF004FFA71 /* MonthlyStatsViewController.swift */; };
+		59D2E6F02465F1DF004FFA71 /* YearlyStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D2E6EF2465F1DF004FFA71 /* YearlyStatsViewController.swift */; };
 		59DE80B7244B884100BDF07A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE80B6244B884100BDF07A /* SettingsViewController.swift */; };
 		59E1D4122449D0B4003FDC38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1D4112449D0B4003FDC38 /* AppDelegate.swift */; };
 		59E1D4142449D0B4003FDC38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E1D4132449D0B4003FDC38 /* SceneDelegate.swift */; };
@@ -44,6 +47,9 @@
 		3509729AD7F9CDB498F9108F /* Pods-pagemaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pagemaster.release.xcconfig"; path = "Target Support Files/Pods-pagemaster/Pods-pagemaster.release.xcconfig"; sourceTree = "<group>"; };
 		372AC517A2298B1AA2E89CA5 /* libPods-pagemaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pagemaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD3E4AC35DBBBB340AC689B /* Pods-pagemaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pagemaster.debug.xcconfig"; path = "Target Support Files/Pods-pagemaster/Pods-pagemaster.debug.xcconfig"; sourceTree = "<group>"; };
+		59D2E6EB2465F161004FFA71 /* WeeklyStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStatsViewController.swift; sourceTree = "<group>"; };
+		59D2E6ED2465F1BF004FFA71 /* MonthlyStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyStatsViewController.swift; sourceTree = "<group>"; };
+		59D2E6EF2465F1DF004FFA71 /* YearlyStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyStatsViewController.swift; sourceTree = "<group>"; };
 		59DE80B6244B884100BDF07A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		59E1D40E2449D0B4003FDC38 /* Page Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Page Master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E1D4112449D0B4003FDC38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,9 @@
 				59E1D4412449D2AF003FDC38 /* SignUpViewController.swift */,
 				59E1D4432449D3EE003FDC38 /* HomeViewController.swift */,
 				59E1D4472449E098003FDC38 /* AddSessionViewController.swift */,
+				59D2E6EB2465F161004FFA71 /* WeeklyStatsViewController.swift */,
+				59D2E6ED2465F1BF004FFA71 /* MonthlyStatsViewController.swift */,
+				59D2E6EF2465F1DF004FFA71 /* YearlyStatsViewController.swift */,
 				59DE80B6244B884100BDF07A /* SettingsViewController.swift */,
 				59E1D4172449D0B4003FDC38 /* Main.storyboard */,
 				59E1D41A2449D0B5003FDC38 /* Assets.xcassets */,
@@ -325,7 +334,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D2E6F02465F1DF004FFA71 /* YearlyStatsViewController.swift in Sources */,
 				59E1D4442449D3EE003FDC38 /* HomeViewController.swift in Sources */,
+				59D2E6EC2465F161004FFA71 /* WeeklyStatsViewController.swift in Sources */,
+				59D2E6EE2465F1BF004FFA71 /* MonthlyStatsViewController.swift in Sources */,
 				59E1D4482449E098003FDC38 /* AddSessionViewController.swift in Sources */,
 				59DE80B7244B884100BDF07A /* SettingsViewController.swift in Sources */,
 				59E1D4162449D0B4003FDC38 /* LogInViewController.swift in Sources */,

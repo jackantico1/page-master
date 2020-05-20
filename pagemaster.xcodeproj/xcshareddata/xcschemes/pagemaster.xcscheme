@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "59E1D40D2449D0B4003FDC38"
-               BuildableName = "pagemaster.app"
+               BuildableName = "Page Master.app"
                BlueprintName = "pagemaster"
                ReferencedContainer = "container:pagemaster.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "59E1D40D2449D0B4003FDC38"
-            BuildableName = "pagemaster.app"
+            BuildableName = "Page Master.app"
             BlueprintName = "pagemaster"
             ReferencedContainer = "container:pagemaster.xcodeproj">
          </BuildableReference>
@@ -96,7 +96,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "59E1D40D2449D0B4003FDC38"
-            BuildableName = "pagemaster.app"
+            BuildableName = "Page Master.app"
             BlueprintName = "pagemaster"
             ReferencedContainer = "container:pagemaster.xcodeproj">
          </BuildableReference>
