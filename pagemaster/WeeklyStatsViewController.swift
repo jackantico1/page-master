@@ -12,7 +12,7 @@ import Firebase
 class WeeklyStatsViewController: UIViewController {
     
     @IBOutlet weak var weekLabel: UILabel!
-    var weekCount = 0
+    var weeksAgo = 0
     @IBOutlet weak var totalPagesReadLabel: UILabel!
     @IBOutlet weak var totalReadingSessionsLabel: UILabel!
     @IBOutlet weak var pagesReadPerSessionLabel: UILabel!
@@ -26,10 +26,12 @@ class WeeklyStatsViewController: UIViewController {
     }
     
     func setWeek() {
-        if (weekCount == 0) {
+        if (weeksAgo == 0) {
             weekLabel.text = "Current Week"
+        } else if (weeksAgo == 1){
+            weekLabel.text = "\(weeksAgo) Week Ago"
         } else {
-            weekLabel.text = "\(weekCount) Weeks Ago"
+            weekLabel.text = "\(weeksAgo) Weeks Ago"
         }
     }
     
@@ -43,7 +45,7 @@ class WeeklyStatsViewController: UIViewController {
                 var totalNumOfSessions = 0
                 var newTitlesRead = [String]()
                 let currentWeekOfYear = Calendar.current.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
-                let weekNum = currentWeekOfYear - self.weekCount
+                let weekNum = currentWeekOfYear - self.weeksAgo
                 var i = 0
                 for n in 0...(sessions!.count - 1) {
                     i = (sessions!.count - 1) - n
@@ -76,4 +78,17 @@ class WeeklyStatsViewController: UIViewController {
         }
     }
     
+    @IBAction func weekBeforePressed(_ sender: UIButton) {
+        if (weeksAgo != 0) {
+            weeksAgo -= 1
+            setWeek()
+            setData()
+        }
+    }
+    
+    @IBAction func weekAfterPressed(_ sender: UIButton) {
+        weeksAgo += 1
+        setWeek()
+        setData()
+    }
 }
