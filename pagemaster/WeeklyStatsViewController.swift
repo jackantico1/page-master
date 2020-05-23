@@ -35,6 +35,7 @@ class WeeklyStatsViewController: UIViewController {
         }
     }
     
+    //There is a bug in this function where it can only go back one year
     func setData() {
         let uid = Auth.auth().currentUser?.uid
         getDataSnapshot(path: "users/\(uid!)") { (snapshot) in

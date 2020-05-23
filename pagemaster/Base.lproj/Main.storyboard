@@ -461,7 +461,7 @@
                         <outlet property="totalPagesReadLabel" destination="H1Q-cs-LrF" id="etA-ML-4HM"/>
                         <outlet property="totalReadingSessionsLabel" destination="4EX-hq-FGr" id="Gy9-16-g6a"/>
                         <segue destination="MTa-tT-TL3" kind="presentation" identifier="homeToWeeklyStats" id="5n4-gg-trx"/>
-                        <segue destination="zG9-hb-9RJ" kind="presentation" id="oqL-Xm-1io"/>
+                        <segue destination="zG9-hb-9RJ" kind="presentation" identifier="homeToMonthlyStats" id="oqL-Xm-1io"/>
                         <segue destination="IXG-tV-TTV" kind="presentation" id="7OP-t5-kLi"/>
                     </connections>
                 </viewController>
@@ -688,32 +688,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toh-9B-12p">
-                                <rect key="frame" x="20" y="52" width="374" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toh-9B-12p">
+                                <rect key="frame" x="20" y="52.5" width="374" height="28"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Pages Read:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7w-Wx-ot7">
-                                <rect key="frame" x="20" y="88" width="374" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pages Read:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7w-Wx-ot7">
+                                <rect key="frame" x="20" y="88.5" width="374" height="20"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Reading Sessions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJo-Ui-ciV">
-                                <rect key="frame" x="20" y="124" width="374" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Reading Sessions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJo-Ui-ciV">
+                                <rect key="frame" x="20" y="124.5" width="374" height="20"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pages Read / Day:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoY-Sy-gTU">
-                                <rect key="frame" x="20" y="196" width="374" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages Read / Day:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoY-Sy-gTU">
+                                <rect key="frame" x="20" y="196.5" width="374" height="20"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pages Read / Session:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbK-Qd-1wx">
-                                <rect key="frame" x="20" y="160" width="374" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages Read / Session:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbK-Qd-1wx">
+                                <rect key="frame" x="20" y="160.5" width="374" height="20"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -754,6 +754,7 @@
                         <color key="backgroundColor" red="0.45550411940000002" green="0.98702150580000003" blue="0.8973490596" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Qdz-0O-yoD" firstAttribute="leading" secondItem="qCe-zx-0P3" secondAttribute="leading" constant="20" id="1Cm-mc-Qho"/>
+                            <constraint firstItem="qCe-zx-0P3" firstAttribute="trailing" secondItem="toh-9B-12p" secondAttribute="trailing" constant="20" id="1jB-bp-iV9"/>
                             <constraint firstItem="Cbi-L3-wWd" firstAttribute="leading" secondItem="qCe-zx-0P3" secondAttribute="leading" constant="20" id="1lp-qi-glQ"/>
                             <constraint firstItem="Cbi-L3-wWd" firstAttribute="bottom" secondItem="qCe-zx-0P3" secondAttribute="bottom" id="4bZ-B9-M0q"/>
                             <constraint firstItem="n7w-Wx-ot7" firstAttribute="top" secondItem="toh-9B-12p" secondAttribute="bottom" constant="8" id="58I-XM-jiW"/>
@@ -768,8 +769,10 @@
                             <constraint firstItem="qCe-zx-0P3" firstAttribute="trailing" secondItem="Cbi-L3-wWd" secondAttribute="trailing" constant="20" id="TMG-6Q-Dgd"/>
                             <constraint firstItem="qCe-zx-0P3" firstAttribute="trailing" secondItem="Qdz-0O-yoD" secondAttribute="trailing" constant="20" id="XCP-Ci-HLQ"/>
                             <constraint firstItem="qCe-zx-0P3" firstAttribute="trailing" secondItem="vl1-tf-aCg" secondAttribute="trailing" constant="20" id="XQO-2o-1Wf"/>
+                            <constraint firstItem="toh-9B-12p" firstAttribute="top" secondItem="Xzl-TV-K9S" secondAttribute="bottom" constant="8" id="bR9-LB-HxT"/>
                             <constraint firstItem="NoY-Sy-gTU" firstAttribute="top" secondItem="NbK-Qd-1wx" secondAttribute="bottom" constant="16" id="ciS-JP-SEe"/>
                             <constraint firstItem="rJo-Ui-ciV" firstAttribute="top" secondItem="n7w-Wx-ot7" secondAttribute="bottom" constant="16" id="dsW-0G-geY"/>
+                            <constraint firstItem="toh-9B-12p" firstAttribute="leading" secondItem="qCe-zx-0P3" secondAttribute="leading" constant="20" id="gnT-QY-GYO"/>
                             <constraint firstItem="Xzl-TV-K9S" firstAttribute="leading" secondItem="qCe-zx-0P3" secondAttribute="leading" constant="20" id="k7d-s6-okK"/>
                             <constraint firstItem="Cbi-L3-wWd" firstAttribute="top" secondItem="Qdz-0O-yoD" secondAttribute="bottom" constant="16" id="p43-bd-CCd"/>
                             <constraint firstItem="Xzl-TV-K9S" firstAttribute="top" secondItem="qCe-zx-0P3" secondAttribute="top" id="p6w-eA-Aw1"/>
@@ -784,7 +787,7 @@
                         <outlet property="monthLabel" destination="toh-9B-12p" id="Kzz-oU-Va3"/>
                         <outlet property="pagesReadPerDayLabel" destination="NoY-Sy-gTU" id="Xeb-wl-BPa"/>
                         <outlet property="pagesReadPerSessionLabel" destination="NbK-Qd-1wx" id="ufl-x7-hSg"/>
-                        <outlet property="totalPagesRead" destination="n7w-Wx-ot7" id="WoT-6P-AaJ"/>
+                        <outlet property="totalPagesReadLabel" destination="n7w-Wx-ot7" id="WoT-6P-AaJ"/>
                         <outlet property="totalReadingSessionsLabel" destination="rJo-Ui-ciV" id="6K7-vi-iRy"/>
                     </connections>
                 </viewController>

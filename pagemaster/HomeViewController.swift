@@ -36,6 +36,8 @@ class HomeViewController: UIViewController {
     @IBAction func seeInDepthStatsPressed(_ sender: UIButton) {
         if (timePeriodSelected.selectedSegmentIndex == 0) {
             performSegue(withIdentifier: "homeToWeeklyStats", sender: nil)
+        } else if (timePeriodSelected.selectedSegmentIndex == 1) {
+            performSegue(withIdentifier: "homeToMonthlyStats", sender: nil)
         }
     }
     
