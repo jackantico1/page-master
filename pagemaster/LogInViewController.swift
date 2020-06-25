@@ -18,6 +18,15 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupToHideKeyboardOnTapOnView()
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+          if let user = user {
+            self.performSegue(withIdentifier: "logInToHome", sender: nil)
+          } else {
+            print("No user is signed in")
+          }
+        }
+        
     }
     
     @IBAction func signInPressed(_ sender: UIButton) {
