@@ -38,6 +38,8 @@ class HomeViewController: UIViewController {
             performSegue(withIdentifier: "homeToWeeklyStats", sender: nil)
         } else if (timePeriodSelected.selectedSegmentIndex == 1) {
             performSegue(withIdentifier: "homeToMonthlyStats", sender: nil)
+        } else if (timePeriodSelected.selectedSegmentIndex == 2) {
+            performSegue(withIdentifier: "homeToYearlyStats", sender: nil)
         }
     }
     

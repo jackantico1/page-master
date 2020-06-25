@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -462,7 +462,7 @@
                         <outlet property="totalReadingSessionsLabel" destination="4EX-hq-FGr" id="Gy9-16-g6a"/>
                         <segue destination="MTa-tT-TL3" kind="presentation" identifier="homeToWeeklyStats" id="5n4-gg-trx"/>
                         <segue destination="zG9-hb-9RJ" kind="presentation" identifier="homeToMonthlyStats" id="oqL-Xm-1io"/>
-                        <segue destination="IXG-tV-TTV" kind="presentation" id="7OP-t5-kLi"/>
+                        <segue destination="IXG-tV-TTV" kind="presentation" identifier="homeToYearlyStats" id="7OP-t5-kLi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhD-FX-OaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -809,15 +809,107 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syK-T7-L57">
+                                <rect key="frame" x="20" y="768" width="374" height="40"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sku-j0-TrM">
+                                <rect key="frame" x="20" y="712" width="374" height="40"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                                <state key="normal" title="Year After">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="monthAfterPressed:" destination="zG9-hb-9RJ" eventType="touchUpInside" id="KXj-As-Jc4"/>
+                                    <action selector="weekBeforePressed:" destination="MTa-tT-TL3" eventType="touchUpInside" id="69G-2x-cdb"/>
+                                    <action selector="yearAfterPressed:" destination="IXG-tV-TTV" eventType="touchUpInside" id="0C9-2b-bjv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMy-S2-Tf7">
+                                <rect key="frame" x="20" y="658" width="374" height="46"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="30"/>
+                                <state key="normal" title="Year Before">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="monthBeforePressed:" destination="zG9-hb-9RJ" eventType="touchUpInside" id="kBn-Bq-LOH"/>
+                                    <action selector="weekAfterPressed:" destination="MTa-tT-TL3" eventType="touchUpInside" id="M53-4n-hAE"/>
+                                    <action selector="yearBeforePressed:" destination="IXG-tV-TTV" eventType="touchUpInside" id="Ymm-Aw-Cxf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdG-gi-HxN">
+                                <rect key="frame" x="20" y="52.5" width="374" height="28"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Pages Read:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9s-LO-VWm">
+                                <rect key="frame" x="20" y="88.5" width="374" height="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Reading Sessions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sP-GP-Q3y">
+                                <rect key="frame" x="20" y="124.5" width="374" height="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages Read / Day:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWe-Aj-rbO">
+                                <rect key="frame" x="20" y="196.5" width="374" height="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pages Read / Session:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BI2-LC-QIA">
+                                <rect key="frame" x="20" y="160.5" width="374" height="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.45550411940000002" green="0.98702150580000003" blue="0.8973490596" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="BI2-LC-QIA" firstAttribute="top" secondItem="6sP-GP-Q3y" secondAttribute="bottom" constant="16" id="4Kg-ZC-ayN"/>
+                            <constraint firstItem="syK-T7-L57" firstAttribute="top" secondItem="sku-j0-TrM" secondAttribute="bottom" constant="16" id="6QM-7x-vQS"/>
+                            <constraint firstItem="WcZ-sr-95v" firstAttribute="trailing" secondItem="VWe-Aj-rbO" secondAttribute="trailing" constant="20" id="8Rx-mU-MHf"/>
                             <constraint firstItem="UR3-qG-OG9" firstAttribute="leading" secondItem="WcZ-sr-95v" secondAttribute="leading" constant="20" id="8iq-By-wtB"/>
+                            <constraint firstItem="v9s-LO-VWm" firstAttribute="leading" secondItem="WcZ-sr-95v" secondAttribute="leading" constant="20" id="Agn-ok-jRO"/>
+                            <constraint firstItem="WcZ-sr-95v" firstAttribute="trailing" secondItem="syK-T7-L57" secondAttribute="trailing" constant="20" id="BR8-QD-0st"/>
+                            <constraint firstItem="VWe-Aj-rbO" firstAttribute="top" secondItem="BI2-LC-QIA" secondAttribute="bottom" constant="16" id="F8r-6H-te6"/>
+                            <constraint firstItem="WcZ-sr-95v" firstAttribute="trailing" secondItem="fMy-S2-Tf7" secondAttribute="trailing" constant="20" id="GUo-Ny-Wya"/>
+                            <constraint firstItem="syK-T7-L57" firstAttribute="bottom" secondItem="WcZ-sr-95v" secondAttribute="bottom" id="GqU-pc-hLW"/>
+                            <constraint firstItem="VWe-Aj-rbO" firstAttribute="leading" secondItem="WcZ-sr-95v" secondAttribute="leading" constant="20" id="J4C-f4-Yk1"/>
+                            <constraint firstItem="JdG-gi-HxN" firstAttribute="leading" secondItem="WcZ-sr-95v" secondAttribute="leading" constant="20" id="Nhd-cH-oly"/>
                             <constraint firstItem="WcZ-sr-95v" firstAttribute="trailing" secondItem="UR3-qG-OG9" secondAttribute="trailing" constant="20" id="NuQ-Cb-5x3"/>
                             <constraint firstItem="UR3-qG-OG9" firstAttribute="top" secondItem="WcZ-sr-95v" secondAttribute="top" id="P1g-mi-4Kt"/>
+                            <constraint firstItem="WcZ-sr-95v" firstAttribute="trailing" secondItem="sku-j0-TrM" secondAttribute="trailing" constant="20" id="PU3-cn-lp2"/>
+                            <constraint firstItem="6sP-GP-Q3y" firstAttribute="leading" secondItem="WcZ-sr-95v" secondAttribute="leading" constant="20" id="VEu-DA-p4g"/>
+                            <constraint firstItem="WcZ-sr-95v" firstAttribute="trailing" secondItem="JdG-gi-HxN" secondAttribute="trailing" constant="20" id="bB6-pw-mVD"/>
+                            <constraint firstItem="JdG-gi-HxN" firstAttribute="top" secondItem="UR3-qG-OG9" secondAttribute="bottom" constant="8" id="bjv-Xn-gcR"/>
+                            <constraint firstItem="WcZ-sr-95v" firstAttribute="trailing" secondItem="v9s-LO-VWm" secondAttribute="trailing" constant="20" id="duA-P9-gIJ"/>
+                            <constraint firstItem="v9s-LO-VWm" firstAttribute="top" secondItem="JdG-gi-HxN" secondAttribute="bottom" constant="8" id="ejd-QG-Jz1"/>
+                            <constraint firstItem="sku-j0-TrM" firstAttribute="top" secondItem="fMy-S2-Tf7" secondAttribute="bottom" constant="8" id="ewc-Id-AH7"/>
+                            <constraint firstItem="sku-j0-TrM" firstAttribute="leading" secondItem="WcZ-sr-95v" secondAttribute="leading" constant="20" id="glm-is-07J"/>
+                            <constraint firstItem="syK-T7-L57" firstAttribute="leading" secondItem="WcZ-sr-95v" secondAttribute="leading" constant="20" id="jah-rf-FP3"/>
+                            <constraint firstItem="WcZ-sr-95v" firstAttribute="trailing" secondItem="BI2-LC-QIA" secondAttribute="trailing" constant="20" id="lGh-eM-HYB"/>
+                            <constraint firstItem="WcZ-sr-95v" firstAttribute="trailing" secondItem="6sP-GP-Q3y" secondAttribute="trailing" constant="20" id="pRO-Ka-Oim"/>
+                            <constraint firstItem="6sP-GP-Q3y" firstAttribute="top" secondItem="v9s-LO-VWm" secondAttribute="bottom" constant="16" id="uME-bH-MJV"/>
+                            <constraint firstItem="BI2-LC-QIA" firstAttribute="leading" secondItem="WcZ-sr-95v" secondAttribute="leading" constant="20" id="vwA-zh-czQ"/>
+                            <constraint firstItem="fMy-S2-Tf7" firstAttribute="leading" secondItem="WcZ-sr-95v" secondAttribute="leading" constant="20" id="zbg-xB-1xZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WcZ-sr-95v"/>
                     </view>
+                    <connections>
+                        <outlet property="pagesReadPerDayLabel" destination="VWe-Aj-rbO" id="Ids-ab-f2v"/>
+                        <outlet property="pagesReadPerSessionLabel" destination="BI2-LC-QIA" id="m7R-ab-XgY"/>
+                        <outlet property="totalPagesReadLabel" destination="v9s-LO-VWm" id="Rrq-hJ-Skt"/>
+                        <outlet property="totalReadingSessionsLabel" destination="6sP-GP-Q3y" id="h2a-TP-5ul"/>
+                        <outlet property="yearLabel" destination="JdG-gi-HxN" id="zfO-TF-VaH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9H-DP-oKu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
