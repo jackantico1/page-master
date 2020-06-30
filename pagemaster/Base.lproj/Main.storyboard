@@ -400,7 +400,7 @@
                                 <rect key="frame" x="20" y="277.5" width="374" height="35"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
-                                <state key="normal" title="See In-Depth Stats">
+                                <state key="normal" title="See More Stats">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -815,6 +815,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="fRu-9k-7t5" kind="presentation" id="FVI-Fa-mRU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sku-j0-TrM">
                                 <rect key="frame" x="20" y="712" width="374" height="40"/>
@@ -917,7 +920,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="t3V-eP-ga7"/>
+        <segue reference="b2w-uZ-cYF"/>
         <segue reference="T5X-jP-Q4z"/>
     </inferredMetricsTieBreakers>
 </document>

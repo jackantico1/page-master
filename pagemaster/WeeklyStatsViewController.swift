@@ -79,6 +79,48 @@ class WeeklyStatsViewController: UIViewController {
         }
     }
     
+    func setHighestVolume() {
+        let uid = Auth.auth().currentUser?.uid
+        getDataSnapshot(path: "users/\(uid!)") { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let sessions = value?["sessions"] as? NSDictionary
+            if (sessions != nil) {
+                let currentWeekOfYear = Calendar.current.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
+                let weekNum = currentWeekOfYear - self.weeksAgo
+                var i = 0
+                var pagesByDayOfWeek = [0, 0, 0, 0, 0, 0, 0]
+                var dayOfWeek = 0
+                var hitWeek = false
+                for n in 0...(sessions!.count - 1) {
+                    i = (sessions!.count - 1) - n
+                    let sessionData = sessions!["session\(i)"] as? NSDictionary
+                    let weekOfEntry = sessionData?["weekOfYear"] as? Int ?? 0
+                    if (weekOfEntry == weekNum) {
+                        if (!hitWeek) {
+                            hitWeek = true
+                            pagesByDayOfWeek[dayOfWeek] += sessionData?["pagesRead"] as? Int ?? 0
+                        } else {
+                            let lastSessionData = sessions!["session\(i - 1)"] as? NSDictionary
+                            let currentSessionDay = sessionData?["day"] as? Int ?? 0
+                            let lastSessionDay = lastSessionData?["day"] as? Int ?? 0
+                            if (currentSessionDay != lastSessionDay) {
+                               dayOfWeek += currentSessionDay - lastSessionDay
+                            }
+                            pagesByDayOfWeek[dayOfWeek] += sessionData?["pagesRead"] as? Int ?? 0
+                        }
+                    } else if (weekOfEntry <= weekNum){
+                        break
+                    }
+                }
+                
+                let mostPagesReadInDay = pagesByDayOfWeek.max()
+                let dayOfHighestVolume = pagesByDayOfWeek.firstIndex(of: mostPagesReadInDay ?? 0)
+                
+                
+            }
+        }
+    }
+    
     @IBAction func weekBeforePressed(_ sender: UIButton) {
         if (weeksAgo != 0) {
             weeksAgo -= 1

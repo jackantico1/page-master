@@ -518,7 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D95BFFAXB9;
 				INFOPLIST_FILE = pagemaster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
@@ -526,7 +526,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jackantico.pagemaster;
 				PRODUCT_NAME = "Page Master";
 				SWIFT_VERSION = 5.0;
@@ -540,7 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D95BFFAXB9;
 				INFOPLIST_FILE = pagemaster/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
@@ -548,7 +548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.1;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jackantico.pagemaster;
 				PRODUCT_NAME = "Page Master";
 				SWIFT_VERSION = 5.0;
