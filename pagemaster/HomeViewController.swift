@@ -26,6 +26,9 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         loadData()
+        
+        print("Day of week: \(getDayOfWeek("2020-07-04")!)")
+        
     }
     
     @IBAction func timePeriodChanged(_ sender: UISegmentedControl) {

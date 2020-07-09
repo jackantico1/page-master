@@ -17,12 +17,14 @@ class WeeklyStatsViewController: UIViewController {
     @IBOutlet weak var totalReadingSessionsLabel: UILabel!
     @IBOutlet weak var pagesReadPerSessionLabel: UILabel!
     @IBOutlet weak var pagesReadPerDayLabel: UILabel!
+    @IBOutlet weak var mostPagesInASesionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupToHideKeyboardOnTapOnView()
         setWeek()
         setData()
+        setMostPages()
     }
     
     func setWeek() {
@@ -79,7 +81,7 @@ class WeeklyStatsViewController: UIViewController {
         }
     }
     
-    func setHighestVolume() {
+    func setMostPages() {
         let uid = Auth.auth().currentUser?.uid
         getDataSnapshot(path: "users/\(uid!)") { (snapshot) in
             let value = snapshot.value as? NSDictionary
@@ -88,35 +90,21 @@ class WeeklyStatsViewController: UIViewController {
                 let currentWeekOfYear = Calendar.current.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
                 let weekNum = currentWeekOfYear - self.weeksAgo
                 var i = 0
-                var pagesByDayOfWeek = [0, 0, 0, 0, 0, 0, 0]
-                var dayOfWeek = 0
-                var hitWeek = false
+                var mostPages = 0
                 for n in 0...(sessions!.count - 1) {
                     i = (sessions!.count - 1) - n
                     let sessionData = sessions!["session\(i)"] as? NSDictionary
                     let weekOfEntry = sessionData?["weekOfYear"] as? Int ?? 0
                     if (weekOfEntry == weekNum) {
-                        if (!hitWeek) {
-                            hitWeek = true
-                            pagesByDayOfWeek[dayOfWeek] += sessionData?["pagesRead"] as? Int ?? 0
-                        } else {
-                            let lastSessionData = sessions!["session\(i - 1)"] as? NSDictionary
-                            let currentSessionDay = sessionData?["day"] as? Int ?? 0
-                            let lastSessionDay = lastSessionData?["day"] as? Int ?? 0
-                            if (currentSessionDay != lastSessionDay) {
-                               dayOfWeek += currentSessionDay - lastSessionDay
-                            }
-                            pagesByDayOfWeek[dayOfWeek] += sessionData?["pagesRead"] as? Int ?? 0
+                        let pagesRead = sessionData?["pagesRead"] as? Int ?? 0
+                        if (pagesRead > mostPages) {
+                            mostPages = pagesRead
                         }
                     } else if (weekOfEntry <= weekNum){
                         break
                     }
                 }
-                
-                let mostPagesReadInDay = pagesByDayOfWeek.max()
-                let dayOfHighestVolume = pagesByDayOfWeek.firstIndex(of: mostPagesReadInDay ?? 0)
-                
-                
+                self.mostPagesInASesionLabel.text = "Most Pages in a Session: \(mostPages)"
             }
         }
     }
@@ -126,6 +114,7 @@ class WeeklyStatsViewController: UIViewController {
             weeksAgo -= 1
             setWeek()
             setData()
+            setMostPages()
         }
     }
     
@@ -133,5 +122,6 @@ class WeeklyStatsViewController: UIViewController {
         weeksAgo += 1
         setWeek()
         setData()
+        setMostPages()
     }
 }

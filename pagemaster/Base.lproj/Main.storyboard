@@ -268,6 +268,12 @@
                                     <action selector="weekBeforePressed:" destination="MTa-tT-TL3" eventType="touchUpInside" id="lON-j4-0CV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Pages in a Session: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPQ-5b-17W">
+                                <rect key="frame" x="20" y="232.5" width="374" height="20"/>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.45550411940000002" green="0.98702150580000003" blue="0.8973490596" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -283,6 +289,7 @@
                             <constraint firstItem="rpA-a8-ure" firstAttribute="leading" secondItem="cR4-qn-EyN" secondAttribute="leading" constant="20" id="Qc9-cT-ISp"/>
                             <constraint firstItem="cR4-qn-EyN" firstAttribute="trailing" secondItem="N88-KM-ohl" secondAttribute="trailing" constant="20" id="Qef-N2-m3G"/>
                             <constraint firstItem="1BO-rw-IIZ" firstAttribute="top" secondItem="9zT-8g-GLH" secondAttribute="bottom" constant="8" id="Ryu-yT-x0Z"/>
+                            <constraint firstItem="UPQ-5b-17W" firstAttribute="top" secondItem="tk2-jX-R51" secondAttribute="bottom" constant="16" id="VB6-Ex-I3p"/>
                             <constraint firstItem="rpA-a8-ure" firstAttribute="bottom" secondItem="cR4-qn-EyN" secondAttribute="bottom" id="Voi-mj-XoA"/>
                             <constraint firstItem="cR4-qn-EyN" firstAttribute="trailing" secondItem="rpA-a8-ure" secondAttribute="trailing" constant="20" id="Z76-HY-rOb"/>
                             <constraint firstItem="cR4-qn-EyN" firstAttribute="trailing" secondItem="PHH-Bi-2Kv" secondAttribute="trailing" constant="20" id="dbZ-tq-1Wp"/>
@@ -290,6 +297,8 @@
                             <constraint firstItem="N88-KM-ohl" firstAttribute="top" secondItem="I3I-nh-Vfq" secondAttribute="bottom" constant="8" id="dza-zf-uMU"/>
                             <constraint firstItem="1BO-rw-IIZ" firstAttribute="leading" secondItem="cR4-qn-EyN" secondAttribute="leading" constant="20" id="eGk-uN-ZeB"/>
                             <constraint firstItem="cR4-qn-EyN" firstAttribute="trailing" secondItem="f6N-SD-Ez2" secondAttribute="trailing" constant="20" id="ehd-vN-Sau"/>
+                            <constraint firstItem="cR4-qn-EyN" firstAttribute="trailing" secondItem="UPQ-5b-17W" secondAttribute="trailing" constant="20" id="fg0-CQ-37C"/>
+                            <constraint firstItem="UPQ-5b-17W" firstAttribute="leading" secondItem="cR4-qn-EyN" secondAttribute="leading" constant="20" id="iAq-5g-mzh"/>
                             <constraint firstItem="f6N-SD-Ez2" firstAttribute="leading" secondItem="cR4-qn-EyN" secondAttribute="leading" constant="20" id="oXC-zh-0mM"/>
                             <constraint firstItem="tk2-jX-R51" firstAttribute="top" secondItem="PHH-Bi-2Kv" secondAttribute="bottom" constant="16" id="qQQ-cf-DiV"/>
                             <constraint firstItem="N88-KM-ohl" firstAttribute="leading" secondItem="cR4-qn-EyN" secondAttribute="leading" constant="20" id="qmr-3p-Aaq"/>
@@ -302,6 +311,7 @@
                         <viewLayoutGuide key="safeArea" id="cR4-qn-EyN"/>
                     </view>
                     <connections>
+                        <outlet property="mostPagesInASesionLabel" destination="UPQ-5b-17W" id="li4-TM-DCZ"/>
                         <outlet property="pagesReadPerDayLabel" destination="tk2-jX-R51" id="PhX-N2-evd"/>
                         <outlet property="pagesReadPerSessionLabel" destination="PHH-Bi-2Kv" id="Gsi-hz-ILV"/>
                         <outlet property="totalPagesReadLabel" destination="EOn-i6-RhT" id="TMG-A9-GKq"/>
